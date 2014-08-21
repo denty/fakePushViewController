@@ -9,9 +9,7 @@
 #import "SilderViewController.h"
 
 @interface SilderViewController ()
-{
-    UIView *silderabelView;
-}
+
 @end
 
 @implementation SilderViewController
@@ -28,9 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    silderabelView = [[UIView alloc] initWithFrame:CGRectMake(0, -50, 320, 100)];
-    [self.view addSubview:silderabelView];
-    [silderabelView setBackgroundColor:[UIColor greenColor]];
+    self.title = @"A";
     UIButton * persentButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
     [persentButton addTarget:self action:@selector(persent) forControlEvents:UIControlEventTouchUpInside];
     [persentButton setBackgroundColor:[UIColor orangeColor]];
@@ -58,13 +54,13 @@
 - (void)persent
 {
     DemoViewController * aDemoViewController = [[DemoViewController alloc] init];
-    [UIView animateWithDuration:0.25 animations:^{
-        [self.view setFrame:CGRectMake(-320, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        [self presentViewController:aDemoViewController animated:NO completion:^{
-            [aDemoViewController.view setFrame:CGRectMake(320, 0, aDemoViewController.view.frame.size.width, aDemoViewController.view.frame.size.height)];
-        }];
-        [aDemoViewController.view setFrame:CGRectMake(0, 0, aDemoViewController.view.frame.size.width, aDemoViewController.view.frame.size.height)];
-    }];
-
+//    [UIView animateWithDuration:0.25 animations:^{
+//        [self.view setFrame:CGRectMake(-320, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//        [self presentViewController:aDemoViewController animated:NO completion:^{
+//            [aDemoViewController.view setFrame:CGRectMake(320, 0, aDemoViewController.view.frame.size.width, aDemoViewController.view.frame.size.height)];
+//        }];
+//        [aDemoViewController.view setFrame:CGRectMake(0, 0, aDemoViewController.view.frame.size.width, aDemoViewController.view.frame.size.height)];
+//    }];
+    [self.navigationController pushViewController:aDemoViewController animated:YES];
 }
 @end

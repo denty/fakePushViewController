@@ -20,7 +20,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     SilderViewController * aSilderViewController = [[SilderViewController alloc] init];
-    [self.window setRootViewController:aSilderViewController];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:aSilderViewController];
+    [self.window setRootViewController:nav];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -45,6 +46,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+- (void)application:(UIApplication *)application willChangeStatusBarOrientation:(UIInterfaceOrientation)newStatusBarOrientation duration:(NSTimeInterval)duration
+{
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

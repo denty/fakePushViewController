@@ -27,13 +27,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"B";
     [self.view setBackgroundColor:[UIColor grayColor]];
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 50, 50)];
     [self.view addSubview:backButton];
-    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
     [backButton setBackgroundColor:[UIColor whiteColor]];
+    
+    CGRect frame = self.view.frame;
+    self.navigationController.view.transform = CGAffineTransformRotate( CGAffineTransformIdentity, -M_PI/2);
+    self.navigationController.view.frame = frame;
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+//    [self.delegate viewWillDisAppear];
+    CGRect frame = self.view.frame;
+    self.navigationController.view.transform = CGAffineTransformIdentity;
+    self.navigationController.view.frame = frame;
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,10 +55,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)back
-{
-    [self dismissViewControllerAnimated:YES completion:^{}];
-}
+//- (void)back
+//{
+//    [UIView animateWithDuration:0.25 animations:^{
+//        [self.view setFrame:CGRectMake(320, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//        
+//    } completion:^(BOOL finished) {
+//        [self dismissViewControllerAnimated:NO completion:^{}];
+//    }];
+//}
 /*
 #pragma mark - Navigation
 

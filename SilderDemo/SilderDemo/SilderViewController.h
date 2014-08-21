@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 #import "DemoViewController.h"
-@interface SilderViewController : UIViewController
-
+@interface SilderViewController : UIViewController 
 @end

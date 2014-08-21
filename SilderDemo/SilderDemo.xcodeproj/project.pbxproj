@@ -465,6 +465,7 @@
 				EC6CB97919A5921D002A82E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC6CB97A19A5921D002A82E0 /* Build configuration list for PBXNativeTarget "SilderDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +474,7 @@
 				EC6CB97C19A5921D002A82E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
